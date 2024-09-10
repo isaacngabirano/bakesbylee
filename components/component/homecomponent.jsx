@@ -32,7 +32,6 @@ export default function Component() {
           },
         });
 
-
         // Filter out records that do not have both 'name' and 'price'
         const validProducts = response.data.records.filter(
           (product) => product.fields.name && product.fields.price
@@ -157,7 +156,7 @@ export default function Component() {
               Home
             </Link>
             <Link
-              href="#"
+              href="/about"
               className="hover:text-primary-foreground/80 transition-colors"
               prefetch={false}
             >
