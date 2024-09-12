@@ -67,3 +67,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* .section1{
+  border: 1px solid red;
+  padding-left: 5rem;
+} */
+
+.main-section{
+  margin: 0 auto;
+  width:100%;
+}
+
+.main-section *{
+  width:100%;
+  margin: 0 auto;
+}
+
+.section-2>img{
+  padding-top:4rem;
+}
+

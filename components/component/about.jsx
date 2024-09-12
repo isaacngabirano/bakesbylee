@@ -28,8 +28,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import cake1 from "../../public/cake_floating.jpg";
 import Image from "next/image";
+import cake1 from "../../public/bakery-hero.jpg";
 
 export default function About() {
   return (
@@ -73,8 +73,8 @@ export default function About() {
           </Button> */}
         </div>
       </header>
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32">
+      <main className="flex-1 main-section">
+        <section className={`w-full py-12 md:py-24 lg:py-32 section1`}>
           <div className="container px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
@@ -88,15 +88,15 @@ export default function About() {
               </div>
             </div>
             <img
-              src="/placeholder.svg"
-              width="550"
-              height="550"
+              src="https://images.pexels.com/photos/28286157/pexels-photo-28286157/free-photo-of-vegan-black-bean-brownies.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              width="30"
+              height="30"
               alt="Bakes by Lee"
               className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full"
             />
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted section-2">
           <div className="container px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
@@ -122,11 +122,11 @@ export default function About() {
               </p>
             </div>
             <img
-              src="/placeholder.svg"
+              src="https://images.pexels.com/photos/28286157/pexels-photo-28286157/free-photo-of-vegan-black-bean-brownies.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               width="550"
-              height="310"
+              height="410"
               alt="Bakes by Lee"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full about-image-2"
             />
           </div>
         </section>
@@ -134,9 +134,6 @@ export default function About() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
-                  Our Products
-                </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Indulge in Our Delectable Baked Goods
                 </h2>
@@ -150,7 +147,7 @@ export default function About() {
             <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 py-12">
               <Card className="w-full max-w-md">
                 <img
-                  src="/placeholder.svg"
+                  src="https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/food/recipes/baking/chocolate-cake-98967131-1280.jpg"
                   width="550"
                   height="310"
                   alt="Chocolate Cake"
@@ -165,31 +162,31 @@ export default function About() {
               </Card>
               <Card className="w-full max-w-md">
                 <img
-                  src="/placeholder.svg"
+                  src="https://www.bakesbylee.com/_next/image?url=https%3A%2F%2Fv5.airtableusercontent.com%2Fv3%2Fu%2F33%2F33%2F1726142400000%2FA03Qipcd_-kbbYEgx42y7A%2FDP69okZum6WrB1HOkF_ECv44EMeL7sB_LT-SMbtYXR053rbWa6yXv3d-skCLQcC1HFpl3YoWDghaq6kwSXwc9lurq3-ujUb4kual6-2P6eUX_wdkMi3uSS_6DweTxzfz_RwlLSr9exYn79ktnWwxStspHceBG_KKInIdN9B34dk%2FXKjhE1nOov_wBgf2wmX2B51DMHT9sxRJc2aghobAJ4k&w=384&q=75"
                   width="550"
                   height="310"
                   alt="Lemon Tart"
                   className="mx-auto aspect-video overflow-hidden rounded-t-xl object-cover object-center"
                 />
                 <CardContent className="space-y-2">
-                  <h3 className="text-xl font-bold">Lemon Tart</h3>
+                  <h3 className="text-xl font-bold">Banana Cake</h3>
                   <p className="text-muted-foreground">
-                    Tangy and refreshing lemon tart with a buttery crust.
+                    Tasty goodness of banana mixed with dough
                   </p>
                 </CardContent>
               </Card>
               <Card className="w-full max-w-md">
                 <img
-                  src="/placeholder.svg"
+                  src="https://www.bakesbylee.com/_next/image?url=https%3A%2F%2Fv5.airtableusercontent.com%2Fv3%2Fu%2F33%2F33%2F1726142400000%2Ffsz-hz1cklAx9Nmg62Q4Rg%2FFalnNPeqpzJWUG5SmwUKM15Ht6YNy00jHSC3cLnXWrdPLILTW_ivUwBxG7N2Y1lzXLSTuVjOIo8zVxqjSXB9djqUBOh-6baT16eOFH1ilf8fWeMr0C1VfVtZh-WjyKLrsx0Sout40WpYedFV-HajzLaZfw1c0lO_jpETzuk8NKpD5_Pha6lF7WpfB_dC0GJH%2F_LuSYixhoJn0PdyIpytrvwMtB-mx4_skZs07hzLsZe4&w=384&q=75"
                   width="550"
                   height="310"
                   alt="Cinnamon Rolls"
                   className="mx-auto aspect-video overflow-hidden rounded-t-xl object-cover object-center"
                 />
                 <CardContent className="space-y-2">
-                  <h3 className="text-xl font-bold">Cinnamon Rolls</h3>
+                  <h3 className="text-xl font-bold">Medium Size Cake</h3>
                   <p className="text-muted-foreground">
-                    Soft, fluffy cinnamon rolls with a sweet, gooey glaze.
+                    With all the sweet soft ice 
                   </p>
                 </CardContent>
               </Card>

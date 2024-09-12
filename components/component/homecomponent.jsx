@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import cake1 from "../../public/cake_floating.jpg";
 import Image from "next/image";
+import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 export default function Component() {
   const [showModal, setShowModal] = useState(false);
@@ -95,7 +96,7 @@ export default function Component() {
     `;
 
     // Send the order details to WhatsApp
-    const whatsappNumber = "+256700235581"; // Replace with the bakery's WhatsApp number
+    const whatsappNumber = "+256703690845";
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
       orderMessage
     )}`;
@@ -161,6 +162,23 @@ export default function Component() {
               prefetch={false}
             >
               About us
+            </Link>
+            {/* Social Media Links */}
+            <Link
+              href="https://www.tiktok.com/@bakesbylee?_t=8nxrez5oCgA&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground/80 transition-colors"
+            >
+              <FaTiktok className="w-6 h-6" />
+            </Link>
+            <Link
+              href="+256776421825"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground/80 transition-colors"
+            >
+              <FaWhatsapp className="w-6 h-6" />
             </Link>
           </nav>
           <Button
