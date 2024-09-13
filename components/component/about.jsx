@@ -37,7 +37,7 @@ export default function About() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between">
+      <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between fixed top-0 left-0">
         {/* Hamburger icon visible on mobile */}
         <button
           className="md:hidden"
