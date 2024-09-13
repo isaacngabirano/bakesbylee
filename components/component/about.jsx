@@ -29,7 +29,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import cake1 from "../../public/bakery-hero.jpg";
+// import cake1 from "../../public/bakery-hero.jpg";
 
 export default function About() {
   return (
