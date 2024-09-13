@@ -139,7 +139,7 @@ export default function Component() {
 
   return (
     <div className="flex flex-col min-h-dvh">
-      <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between fixed top-0 left-0">
+      <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between fixed top-0 left-0 w-full z-50">
         {/* Hamburger icon visible on mobile */}
         <button
           className="md:hidden"
