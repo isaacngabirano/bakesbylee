@@ -11,12 +11,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import cake1 from "../../public/cake_floating.jpg";
 import Image from "next/image";
-import { FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { FaTiktok, FaWhatsapp, FaBars } from "react-icons/fa";
 
 export default function Component() {
   const [showModal, setShowModal] = useState(false);
   const [cart, setCart] = useState([]);
   const [groupedProducts, setGroupedProducts] = useState({});
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const baseId = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
   const tableName = process.env.NEXT_PUBLIC_AIRTABLE_TABLE_NAME;
@@ -139,6 +140,14 @@ export default function Component() {
   return (
     <div className="flex flex-col min-h-dvh">
       <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between">
+        {/* Hamburger icon visible on mobile */}
+        <button
+          className="md:hidden"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
+          <FaBars className="w-6 h-6" />
+        </button>
+
         <Link
           href="#"
           className="flex items-center gap-2 font-bold text-xl"
@@ -148,22 +157,48 @@ export default function Component() {
           Bakes By Lee
         </Link>
         <div className="flex items-center gap-4">
+          {/* Mobile menu */}
+          {showMobileMenu && (
+            <nav className="absolute top-12 left-0 w-full bg-primary text-center py-4 md:hidden">
+              <Link href="/" className="block py-2">
+                Home
+              </Link>
+              <Link href="/about" className="block py-2">
+                About us
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@bakesbylee?_t=8nxrez5oCgA&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2"
+              >
+                <FaTiktok className="inline-block w-6 h-6" /> TikTok
+              </Link>
+              <Link
+                href="https://wa.me/256776421825"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2"
+              >
+                <FaWhatsapp className="inline-block w-6 h-6" /> WhatsApp
+              </Link>
+            </nav>
+          )}
+
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-4">
             <Link
               href="/"
               className="hover:text-primary-foreground/80 transition-colors"
-              prefetch={false}
             >
               Home
             </Link>
             <Link
               href="/about"
               className="hover:text-primary-foreground/80 transition-colors"
-              prefetch={false}
             >
               About us
             </Link>
-            {/* Social Media Links */}
             <Link
               href="https://www.tiktok.com/@bakesbylee?_t=8nxrez5oCgA&_r=1"
               target="_blank"
@@ -173,7 +208,7 @@ export default function Component() {
               <FaTiktok className="w-6 h-6" />
             </Link>
             <Link
-              href="+256776421825"
+              href="https://wa.me/256776421825"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-foreground/80 transition-colors"
@@ -181,6 +216,7 @@ export default function Component() {
               <FaWhatsapp className="w-6 h-6" />
             </Link>
           </nav>
+
           <Button
             variant="ghost"
             size="icon"
@@ -194,6 +230,7 @@ export default function Component() {
           </Button>
         </div>
       </header>
+
       <main className="flex-1 py-8 px-4 md:px-8">
         {Object.keys(groupedProducts).map((category) => (
           <section key={category} className="mb-8">

@@ -29,12 +29,23 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import { FaTiktok, FaWhatsapp, FaBars } from "react-icons/fa";
 // import cake1 from "../../public/bakery-hero.jpg";
 
 export default function About() {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between">
+        {/* Hamburger icon visible on mobile */}
+        <button
+          className="md:hidden"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
+          <FaBars className="w-6 h-6" />
+        </button>
+
         <Link
           href="#"
           className="flex items-center gap-2 font-bold text-xl"
@@ -44,22 +55,66 @@ export default function About() {
           Bakes By Lee
         </Link>
         <div className="flex items-center gap-4">
+          {/* Mobile menu */}
+          {showMobileMenu && (
+            <nav className="absolute top-12 left-0 w-full bg-primary text-center py-4 md:hidden">
+              <Link href="/" className="block py-2">
+                Home
+              </Link>
+              <Link href="/about" className="block py-2">
+                About us
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@bakesbylee?_t=8nxrez5oCgA&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2"
+              >
+                <FaTiktok className="inline-block w-6 h-6" /> TikTok
+              </Link>
+              <Link
+                href="https://wa.me/256776421825"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2"
+              >
+                <FaWhatsapp className="inline-block w-6 h-6" /> WhatsApp
+              </Link>
+            </nav>
+          )}
+
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-4">
             <Link
               href="/"
               className="hover:text-primary-foreground/80 transition-colors"
-              prefetch={false}
             >
               Home
             </Link>
             <Link
               href="/about"
               className="hover:text-primary-foreground/80 transition-colors"
-              prefetch={false}
             >
               About us
             </Link>
+            <Link
+              href="https://www.tiktok.com/@bakesbylee?_t=8nxrez5oCgA&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground/80 transition-colors"
+            >
+              <FaTiktok className="w-6 h-6" />
+            </Link>
+            <Link
+              href="https://wa.me/256776421825"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground/80 transition-colors"
+            >
+              <FaWhatsapp className="w-6 h-6" />
+            </Link>
           </nav>
+
           {/* <Button
             variant="ghost"
             size="icon"
@@ -186,7 +241,7 @@ export default function About() {
                 <CardContent className="space-y-2">
                   <h3 className="text-xl font-bold">Medium Size Cake</h3>
                   <p className="text-muted-foreground">
-                    With all the sweet soft ice 
+                    With all the sweet soft ice
                   </p>
                 </CardContent>
               </Card>
